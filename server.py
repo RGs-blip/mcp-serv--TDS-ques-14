@@ -1,6 +1,7 @@
 import hashlib
 
 from mcp.server.mcpserver import MCPServer, Context
+from mcp.server.transport_security import TransportSecuritySettings
 
 EMAIL = "23f1001344@ds.study.iitm.ac.in"
 
@@ -25,7 +26,11 @@ def solve_challenge(ctx: Context) -> str:
     return digest[:16]
 
 
-app = mcp.streamable_http_app()
+app = mcp.streamable_http_app(
+    transport_security=TransportSecuritySettings(
+        allowed_hosts=["iitm-mcp-server.onrender.com"]
+    )
+)
 
 
 if __name__ == "__main__":
