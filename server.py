@@ -28,7 +28,7 @@ def solve_challenge(ctx: Context) -> str:
 
 app = mcp.streamable_http_app(
     transport_security=TransportSecuritySettings(
-        allowed_hosts=["iitm-mcp-server.onrender.com"]
+        allowed_hosts=["mcp-serv-tds-ques-14.onrender.com"]
     )
 )
 
